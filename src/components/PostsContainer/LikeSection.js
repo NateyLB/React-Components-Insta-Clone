@@ -4,10 +4,8 @@
 import React from "react";
 
 const LikeSection = props => {
-  const likes = props; 
-  const SetLikes =  () => {
-    return likes.likes + 1;
-  }
+  const likes = props.likes; 
+  const setLikes = props.setLikes;
   return (
     <div>
     <div
@@ -15,8 +13,7 @@ const LikeSection = props => {
       key="likes-icons-container"
     >
       <div className="like-section-wrapper">
-        <i className="far fa-heart" onClick={() => SetLikes()}/>
-        {console.log(likes)}
+        <i className="far fa-heart" onClick={() => setLikes(likes + 1)} />
       </div>
       <div className="like-section-wrapper">
         <i className="far fa-comment" />
@@ -24,7 +21,7 @@ const LikeSection = props => {
     </div>
     <p className="like-number">
       
-     {likes.likes} likes</p>
+     {likes} likes</p>
 </div>
   )
 };
