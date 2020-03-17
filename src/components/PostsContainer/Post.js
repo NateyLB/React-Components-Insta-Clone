@@ -15,9 +15,7 @@ const Post = props => {
     <div className="post-border">
       <PostHeader
         username={post.username}
-        thumbnailUrl={
-          post.thumbnailUrl
-        }
+        thumbnailUrl={post.thumbnailUrl}
       />
       <div className="post-image-wrapper">
         <img
@@ -26,7 +24,7 @@ const Post = props => {
           src={post.imageUrl}
         />
       </div>
-      <LikeSection likes = {likes} setLikes = {setLikes} />
+      <LikeSection likes={likes} setLikes={setLikes} />
       <CommentSection
         postId={props.post.imageUrl}
         comments={props.post.comments}
