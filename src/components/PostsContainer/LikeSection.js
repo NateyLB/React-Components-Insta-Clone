@@ -4,8 +4,20 @@
 import React from "react";
 
 const LikeSection = props => {
-  const likes = props.likes; 
+  var likes = props.likes; 
   const setLikes = props.setLikes;
+  const newLikes = props.newLikes;
+
+  function controlLikes(){
+    if(newLikes < likes){
+      console.log(newLikes, "newLikes in if")
+      setLikes(likes-1)
+    }
+    else{
+      console.log(newLikes, "newLikes in else")
+      setLikes(likes+1)
+    }
+  }
   return (
     <div>
     <div
@@ -13,7 +25,7 @@ const LikeSection = props => {
       key="likes-icons-container"
     >
       <div className="like-section-wrapper">
-        <i className="far fa-heart" onClick={() => setLikes(likes + 1)} />
+        <i className="far fa-heart" onClick={() => controlLikes()} />
       </div>
       <div className="like-section-wrapper">
         <i className="far fa-comment" />

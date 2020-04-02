@@ -11,6 +11,8 @@ const Post = props => {
   const {post} = props
   // set up state for the likes
   const [likes, setLikes] = useState(post.likes)
+  //a copy of likes to keep track of incrementing so we can go back to original state 
+  const newLikes = Object.assign({}, post)
   return (
     <div className="post-border">
       <PostHeader
@@ -24,7 +26,7 @@ const Post = props => {
           src={post.imageUrl}
         />
       </div>
-      <LikeSection likes={likes} setLikes={setLikes} />
+      <LikeSection likes={likes} setLikes={setLikes} newLikes={newLikes.likes} />
       <CommentSection comments={post.comments}/> 
     </div>
   );
